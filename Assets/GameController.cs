@@ -15,7 +15,11 @@ public class GameController : MonoBehaviour
     private int winner=0;
     private bool p1lose = false;
     private bool p2lose = false;
-    public AudioSource audio;
+    private int randomaudio;
+    public AudioSource detik5;
+    public AudioSource detik3;
+    public AudioSource detik2;
+
     public int target = 5;
     //green light = true red light = false
     private bool greenlight = true;
@@ -25,7 +29,6 @@ public class GameController : MonoBehaviour
         Time.timeScale = 1;
         player1 = 0;
         player2 = 0;
-        audio.Play();
     }
 
     // Update is called once per frame
@@ -38,7 +41,6 @@ public class GameController : MonoBehaviour
         }
         else if (greenlight == false)
         {
-            audio.Play();
             GreenlightUI.SetActive(false);
             RedlightUI.SetActive(true);
         }
@@ -99,8 +101,22 @@ public class GameController : MonoBehaviour
         //timer dari redlight menuju greenlight
         if (playtime <= 0 && greenlight == false && winner == 0)
         {
-            playtime = 5.0f;
-            greenlight = true;
+            randomaudio = Random.Range(0, 3);
+            if (randomaudio == 0)
+            {
+                detik2.Play();
+                playtime = 2.0f;
+            }else if (randomaudio == 1)
+            {
+                detik3.Play();
+                playtime = 3.0f;
+            }
+            else if (randomaudio == 2)
+            {
+                detik5.Play();
+                playtime = 5.0f;
+            }
+                greenlight = true;
         }
         else if (playtime > 0 && greenlight == false && winner==0)
         {
@@ -110,7 +126,9 @@ public class GameController : MonoBehaviour
 
     public void stop()
     {
-        audio.Stop();
+        detik2.Stop();
+        detik3.Stop();
+        detik5.Stop();
         P1LOSEUI.SetActive(false);
         P2LOSEUI.SetActive(false);
         Time.timeScale = 0;
