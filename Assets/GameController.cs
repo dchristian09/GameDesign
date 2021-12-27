@@ -20,7 +20,7 @@ public class GameController : MonoBehaviour
     public AudioSource detik3;
     public AudioSource detik2;
 
-    public int target = 5;
+    public int target;
     //green light = true red light = false
     private bool greenlight = true;
     private float playtime = 5.0f;
@@ -48,6 +48,7 @@ public class GameController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) && p1lose == false && greenlight == true && winner == 0)
         {
             player1 = player1 + 1;
+
         }
         if (Input.GetKeyDown(KeyCode.KeypadEnter) && p2lose == false && greenlight == true && winner == 0)
         {
