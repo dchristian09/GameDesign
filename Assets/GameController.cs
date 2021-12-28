@@ -53,6 +53,7 @@ public class GameController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.KeypadEnter) && p2lose == false && greenlight == true && winner == 0)
         {
             player2 = player2 + 1;
+
         }
 
         //cek udah menang belum (target tap)
