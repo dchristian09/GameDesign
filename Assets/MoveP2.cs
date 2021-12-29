@@ -14,7 +14,7 @@ public class MoveP2 : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.KeypadEnter))
         {
-            transform.position += transform.right * (Time.deltaTime * 32);
+            transform.position += transform.right * (Time.deltaTime * 35);
         }
 
     }

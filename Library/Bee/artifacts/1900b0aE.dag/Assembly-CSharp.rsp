@@ -342,6 +342,8 @@
 -r:"Library/Bee/artifacts/1900b0aE.dag/VSSettingsProvider.ref.dll"
 "Assets/GameController.cs"
 "Assets/GameOverScript.cs"
+"Assets/MoveP1.cs"
+"Assets/MoveP2.cs"
 -langversion:8.0
 
 /deterministic

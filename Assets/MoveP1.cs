@@ -13,7 +13,7 @@ public class MoveP1 : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            transform.position += transform.right * (Time.deltaTime * 32);
+            transform.position += transform.right * (Time.deltaTime * 35);
         }
     }
 }
